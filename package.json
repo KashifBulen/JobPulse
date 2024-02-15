@@ -1,0 +1,21 @@
+{
+  "name": "careerpulse",
+  "version": "1.0.0",
+  "description": "PLatform where eveyone can get the latest job according to their fields.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mr. Kashif Khan",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "node-cron": "^3.0.3",
+    "nodemon": "^3.0.3",
+    "puppeteer": "^22.0.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  }
+}

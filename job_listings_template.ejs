@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobPulse</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #2ab162;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .job-listings {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 20px;
+        }
+
+        .job-listing {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .job-listing h2 {
+            font-size: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .job-listing p {
+            margin: 5px 0;
+        }
+
+        .job-listing button {
+            background-color: #2ab162;
+            color: #fff;
+            
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 30%;
+            float :right;
+        }
+
+        .job-listing button a {
+            text-decoration: none;
+            color: inherit;
+            font-size: 1rem;
+            font-weight: bolder;
+
+        }
+
+        .job-listing button:hover {
+            background-color: #00b377;
+        }
+
+        .Date{
+            padding-top: 2px;
+        }
+
+        footer {
+            background-color: #2ab162;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 768px) {
+            .job-listings {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .job-listings {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>JobPulse</h1>
+    </header>
+
+    <main>
+        <section class="job-listings">
+            <% jobListings.forEach(job=> { %>
+                <div class="job-listing">
+                    <h2>Title: <%= job.title %></a></h2>
+                    <p>Field: <%= job.extraData %>
+                    </p>
+                    <p>Industry: <%= job.industry %>
+                    </p>
+                    <p>City: <%= job.city %>
+                    </p>
+                    <p class="Date">Date: <%= job.jobDate %>
+                    </p>
+                    <button><a href="<%= job.link %>" target="_blank">Apply</a></button>
+                </div>
+                <% }); %>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 JobPulse. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
